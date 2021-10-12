@@ -18,7 +18,7 @@ jobs:
       - python/install-deps
       - run:
           name: Run Tests
-          command: coverage run -m pytest -vv && coveralls
+          command: coverage run --omit='*/site-packages/*' -m pytest -vv && coveralls
 
 
 workflows:
