@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c393f5bfb4e64b80bbfb552ed1b7a723)](https://app.codacy.com/gh/jonathankamau/songs-api?utm_source=github.com&utm_medium=referral&utm_content=jonathankamau/songs-api&utm_campaign=Badge_Grade_Settings)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/85d644e77ebd449a9f763dfd95bd3b5f)](https://www.codacy.com/gh/jonathankamau/songs-api/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jonathankamau/songs-api&amp;utm_campaign=Badge_Grade)
 [![CircleCi](https://circleci.com/gh/jonathankamau/temperature-query-api.svg?style=svg)](https://app.circleci.com/pipelines/github/jonathankamau/songs-api)
