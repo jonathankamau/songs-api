@@ -1,6 +1,5 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c393f5bfb4e64b80bbfb552ed1b7a723)](https://app.codacy.com/gh/jonathankamau/songs-api?utm_source=github.com&utm_medium=referral&utm_content=jonathankamau/songs-api&utm_campaign=Badge_Grade_Settings)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/85d644e77ebd449a9f763dfd95bd3b5f)](https://www.codacy.com/gh/jonathankamau/songs-api/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jonathankamau/songs-api&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c393f5bfb4e64b80bbfb552ed1b7a723)](https://app.codacy.com/gh/jonathankamau/songs-api?utm_source=github.com&utm_medium=referral&utm_content=jonathankamau/songs-api&utm_campaign=Badge_Grade_Settings)
 [![CircleCi](https://circleci.com/gh/jonathankamau/temperature-query-api.svg?style=svg)](https://app.circleci.com/pipelines/github/jonathankamau/songs-api)
 [![Coverage Status](https://coveralls.io/repos/github/jonathankamau/temperature-query-api/badge.svg?branch=main)](https://coveralls.io/github/jonathankamau/songs-api?branch=main)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1a97c6de621dc9d1a0e2/maintainability)](https://codeclimate.com/github/jonathankamau/songs-api/maintainability)
@@ -21,13 +20,13 @@ Songs API is a API tool that allows the user to retrieve song data, add ratings 
     - When retrieving lists of song records I have them queried with [batch_size](https://docs.mongoengine.org/apireference.html#mongoengine.queryset.QuerySet.batch_size) that optimizes bulk reads, reduces the load on the server and maintains good database performance.
 
 ### Available Endpoints
-|HTTP Method   | Endpoint  | Resource class | Description | Example Usage
-| ------------- | --------- | --------- |--------------- |------------------- |
-|GET| `/api/v1/songs?page_number={number}&songs_per_page={number}` | SongsListResource | Retrieve a list of songs from the db. ThePagination parameters `page_number` and `songs_per_page` are optional | Without pagination: `/api/v1/songs`  With pagination: `http://127.0.0.1:5000/api/v1/songs?page_number=1&songs_per_page=2`
-|GET| `api/v1/songs/difficulty?level={number}` | AverageDifficultyResource | Returns the average difficulty for all songs. the `level` parameter is optional and allows filtering by level | Without level parameter: `http://127.0.0.1:5000/api/v1/songs` With level parameter `http://127.0.0.1:5000/api/v1/songs/difficulty?level=13`
-|GET| `/api/v1/songs/search?message={text}` | SongSearchResource | Returns a list of songs that match the search query. `message` is the query parameter used. It takes into account the song's artist and title | `http://127.0.0.1:5000/api/v1/songs/search?message=wishing`
-|POST| `/api/v1/songs/rating?song_id={song_id}rating={rating}` | SongRatingResource | Adds a rating between 1 and 5 to a song. `song_id` and  `rating` are both passed as parameters | `http://127.0.0.1:5000/api/v1/songs/rating?song_id=6161da9800813afe5d66fc18&rating=3`
-|GET| `http://127.0.0.1:5000/api/v1/songs/rating/metrics?song_id={song_id}` | RatingMetricsResource | Returns the average, lowest and highest rating for a song | `http://127.0.0.1:5000/api/v1/songs/rating/metrics?song_id=6161da9800813afe5d66fc18`
+|HTTP Method   | Endpoint | Description |
+| ------------- | --------- | --------------- |
+|GET| `/api/v1/songs?page_number={number}&songs_per_page={number}` | Retrieve a list of songs from the db. ThePagination parameters `page_number` and `songs_per_page` are optional
+|GET| `api/v1/songs/difficulty?level={number}` | Returns the average difficulty for all songs. the `level` parameter is optional and allows filtering by level
+|GET| `/api/v1/songs/search?message={text}` | Returns a list of songs that match the search query. `message` is the query parameter used. It takes into account the song's artist and title
+|POST| `/api/v1/songs/rating?song_id={song_id}rating={rating}` | Adds a rating between 1 and 5 to a song. `song_id` and  `rating` are both passed as parameters
+|GET| `http://127.0.0.1:5000/api/v1/songs/rating/metrics?song_id={song_id}` | Returns the average, lowest and highest rating for a song
 
 
 ## Getting started with the API
