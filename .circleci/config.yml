@@ -6,6 +6,11 @@ orbs:
 
 jobs:
   build-and-test:
+    docker:
+      - image: circleci/mongo:4.4
+      environment:
+        MONGODB_URI: mongodb://db:27017/songs_db
+        MONGODB_DBNAME: ${MONGODB_DBNAME}
     executor: python/default
     steps:
       - checkout
