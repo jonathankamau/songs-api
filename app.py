@@ -1,9 +1,8 @@
-import json
 import os
 
 from flask import Flask, jsonify
 from flask_mongoengine import MongoEngine
-from flask_restx import Api, reqparse
+from flask_restx import Api
 
 from api.models import Songs
 from api.routes import resource_routes

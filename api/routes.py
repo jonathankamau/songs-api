@@ -1,11 +1,11 @@
-""" Resource routes for the API """
+"""Resource routes for the API."""
 from api.endpoints.songs import (AverageDifficultyResource,
                                  RatingMetricsResource, SongRatingResource,
                                  SongSearchResource, SongsListResource)
 
 
 def resource_routes(api):
-    """ Define the routes for the API """
+    """Define the routes for the API."""
     api.add_resource(
         SongsListResource,
         "/api/v1/songs",

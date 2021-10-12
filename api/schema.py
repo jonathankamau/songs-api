@@ -1,9 +1,9 @@
-""" Schema file. """
+"""Schema file."""
 from marshmallow import Schema, fields
 
 
 class SongSchema(Schema):
-    """ Schema for the Song model """
+    """Schema for the Song model."""
 
     title = fields.Str(required=True)
     artist = fields.Str(required=True)

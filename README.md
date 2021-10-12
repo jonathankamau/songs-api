@@ -10,14 +10,14 @@
 
 Songs API is a API tool that allows the user to retrieve song data, add ratings to a song and retrieve rating metrics.
 ## Notes on the API and structure
-- This API is composed of five endpoints, the resource classes for each can be found [here](api/endpoints/songs).
-- The tests for each of the endpoints can be found [here](api/tests)
-- The routes for each of the endpoints can be found [here](api/routes)
-- The JSON file containing the songs that are loaded to MongoDB when the api server is run can be found [here](songs.json)
--  the entry point for the api when its manually run locally is [manage.py](manage.py) that calls the create_app method in [app.py](app.py)
-- In the case of the song data scaling up to millions of document records, I have implemented the following that will aid with performance:
-    - Upon running the API, a generator function is used to load the song records in chunks or batches from the JSON file to a list of song objects. Once its complete then a bulk  insert of those song objects is executed using the mongoengine's [insert](http://docs.mongoengine.org/apireference.html#mongoengine.queryset.QuerySet.insert) method. This reduces load on memory and maintains optimal database performance.
-    - When retrieving lists of song records I have them queried with [batch_size](https://docs.mongoengine.org/apireference.html#mongoengine.queryset.QuerySet.batch_size) that optimizes bulk reads, reduces the load on the server and maintains good database performance.
+-   This API is composed of five endpoints, the resource classes for each can be found [here](api/endpoints/songs).
+-   The tests for each of the endpoints can be found [here](api/tests)
+-   The routes for each of the endpoints can be found [here](api/routes)
+-   The JSON file containing the songs that are loaded to MongoDB when the api server is run can be found [here](songs.json)
+-  The entry point for the api when its manually run locally is [manage.py](manage.py) that calls the create_app method in [app.py](app.py)
+-   In the case of the song data scaling up to millions of document records, I have implemented the following that will aid with performance:
+    -   Upon running the API, a generator function is used to load the song records in chunks or batches from the JSON file to a list of song objects. Once its complete then a bulk  insert of those song objects is executed using the mongoengine's [insert](http://docs.mongoengine.org/apireference.html#mongoengine.queryset.QuerySet.insert) method. This reduces load on memory and maintains optimal database performance.
+    -   When retrieving lists of song records I have them queried with [batch_size](https://docs.mongoengine.org/apireference.html#mongoengine.queryset.QuerySet.batch_size) that optimizes bulk reads, reduces the load on the server and maintains good database performance.
 
 ### Available Endpoints
 |HTTP Method   | Endpoint | Description |
@@ -86,7 +86,7 @@ If you are running the project manually you will need to do the following:
     pip install -r requirements.txt
     ```
 
-- Run the following docker command that will run MongoDB in a docker container:
+-   Run the following docker command that will run MongoDB in a docker container:
 
     ```
     docker run --detach --name songs_db --publish 127.0.0.1:27017:27017 mongo:4.4
