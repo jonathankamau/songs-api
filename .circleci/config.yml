@@ -1,0 +1,21 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+  coveralls: coveralls/coveralls@1.0.6
+
+jobs:
+  build-and-test:
+    executor: python/default
+    steps:
+      - checkout
+      - python/install-deps
+      - run:
+          name: Run Tests
+          command: coverage run -m pytest -vv && coveralls
+
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
