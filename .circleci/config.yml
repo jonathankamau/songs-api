@@ -15,8 +15,7 @@ jobs:
     executor: python/default
     steps:
       - checkout
-      - python/install-packages:
-          pkg-manager: pip
+      - python/install-deps
       - run:
           name: Run Tests
           command: coverage run -m pytest -vv && coveralls
