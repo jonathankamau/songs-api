@@ -7,6 +7,7 @@ orbs:
 jobs:
   build-and-test:
     docker:
+      - image: cimg/python:3.9
       - image: circleci/mongo:4.4
         environment:
           MONGODB_URI: mongodb://db:27017/songs_db
@@ -14,7 +15,8 @@ jobs:
     executor: python/default
     steps:
       - checkout
-      - python/install-deps
+      - python/install-packages:
+          pkg-manager: pip
       - run:
           name: Run Tests
           command: coverage run -m pytest -vv && coveralls
