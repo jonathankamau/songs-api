@@ -2,7 +2,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c393f5bfb4e64b80bbfb552ed1b7a723)](https://app.codacy.com/gh/jonathankamau/songs-api?utm_source=github.com&utm_medium=referral&utm_content=jonathankamau/songs-api&utm_campaign=Badge_Grade_Settings)
 [![CircleCi](https://circleci.com/gh/jonathankamau/temperature-query-api.svg?style=svg)](https://app.circleci.com/pipelines/github/jonathankamau/songs-api)
 [![Coverage Status](https://coveralls.io/repos/github/jonathankamau/songs-api/badge.svg?branch=main)](https://coveralls.io/github/jonathankamau/songs-api?branch=main)
-[![Maintainability](https://api.codeclimate.com/v1/badges/1a97c6de621dc9d1a0e2/maintainability)](https://codeclimate.com/github/jonathankamau/songs-api/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/75e1fd6c71ed79c0211a/maintainability)](https://codeclimate.com/github/jonathankamau/songs-api/maintainability)
 ![CircleCI](https://img.shields.io/circleci/build/github/jonathankamau/songs-api)
 [![PyPI pyversions](https://img.shields.io/badge/Python%20Version-3.9-blue)](https://img.shields.io/badge/Python%20Version-3.9-blue)
 
