@@ -10,7 +10,7 @@ jobs:
       - image: cimg/python:3.9
       - image: circleci/mongo:4.4
         environment:
-          MONGODB_URI: mongodb://db:27017/songs_db
+          MONGODB_URI: mongodb://127.0.0.1:27017/songs_db
           MONGODB_DBNAME: ${MONGODB_DBNAME}
     executor: python/default
     steps:
