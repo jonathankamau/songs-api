@@ -28,7 +28,6 @@ Songs API is a API tool that allows the user to retrieve song data, add ratings 
 |POST| `/api/v1/songs/rating?song_id={song_id}rating={rating}` | Adds a rating between 1 and 5 to a song. `song_id` and  `rating` are both passed as parameters
 |GET| `http://127.0.0.1:5000/api/v1/songs/rating/metrics?song_id={song_id}` | Returns the average, lowest and highest rating for a song
 
-
 ## Getting started with the API
 -   The project was built using python 3.9 and the [Flask](https://flask.palletsprojects.com/en/2.0.x/). The API utilizes the [flask-restx](https://flask-restx.readthedocs.io/en/latest/) library.
 
@@ -45,8 +44,6 @@ Songs API is a API tool that allows the user to retrieve song data, add ratings 
     ```
     git clone git@github.com:jonathankamau/songs-api.git
     ```
-
-
 
 ### Local Environment Installation
 

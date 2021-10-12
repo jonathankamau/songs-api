@@ -3,9 +3,6 @@ import pytest
 from api.models import SongRatings, Songs
 from app import create_app
 
-app = create_app()
-client = app.test_client()
-
 
 @pytest.fixture()
 def client():
