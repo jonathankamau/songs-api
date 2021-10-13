@@ -8,7 +8,7 @@ def generate_song_data(songs_file):
         yield json.loads(song_data)
 
 
-def chunks(iterable, chunk_size=1000):
+def chunks(iterable, chunk_size=100000):
     """Yield successive n-sized chunks."""
     iterator = iter(iterable)
     for i in iterator:

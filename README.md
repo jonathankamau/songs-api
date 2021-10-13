@@ -1,7 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c393f5bfb4e64b80bbfb552ed1b7a723)](https://app.codacy.com/gh/jonathankamau/songs-api?utm_source=github.com&utm_medium=referral&utm_content=jonathankamau/songs-api&utm_campaign=Badge_Grade_Settings)
 [![CircleCi](https://circleci.com/gh/jonathankamau/temperature-query-api.svg?style=svg)](https://app.circleci.com/pipelines/github/jonathankamau/songs-api)
-[![Coverage Status](https://coveralls.io/repos/github/jonathankamau/songs-api/badge.svg?branch=main)](https://coveralls.io/github/jonathankamau/songs-api?branch=main)
 [![Maintainability](https://api.codeclimate.com/v1/badges/75e1fd6c71ed79c0211a/maintainability)](https://codeclimate.com/github/jonathankamau/songs-api/maintainability)
 ![CircleCI](https://img.shields.io/circleci/build/github/jonathankamau/songs-api)
 [![PyPI pyversions](https://img.shields.io/badge/Python%20Version-3.9-blue)](https://img.shields.io/badge/Python%20Version-3.9-blue)
@@ -10,13 +9,13 @@
 
 Songs API is a API tool that allows the user to retrieve song data, add ratings to a song and retrieve rating metrics.
 ## Notes on the API and structure
--   This API is composed of five endpoints, the resource classes for each can be found [here](api/endpoints/songs).
+-   This API is composed of five endpoints, the resource classes for each can be found [here](api/endpoints/songs.py).
 -   The tests for each of the endpoints can be found [here](api/tests)
--   The routes for each of the endpoints can be found [here](api/routes)
+-   The routes for each of the endpoints can be found [here](api/routes.py)
 -   The JSON file containing the songs that are loaded to MongoDB when the api server is run can be found [here](songs.json)
--  The entry point for the api when its manually run locally is [manage.py](manage.py) that calls the create_app method in [app.py](app.py)
+-   The entry point for the api when its manually run locally is [manage.py](manage.py) that calls the create_app method in [app.py](app.py)
 -   In the case of the song data scaling up to millions of document records, I have implemented the following that will aid with performance:
-    -   Upon running the API, a generator function is used to load the song records in chunks or batches from the JSON file to a list of song objects. Once its complete then a bulk  insert of those song objects is executed using the mongoengine's [insert](http://docs.mongoengine.org/apireference.html#mongoengine.queryset.QuerySet.insert) method. This reduces load on memory and maintains optimal database performance.
+    -   Upon running the API, a [generator function](app.py#L32) is used to load the song records in chunks or batches from the JSON file to a list of song objects. Once its complete then a bulk  insert of those song objects is executed using the mongoengine's [insert](http://docs.mongoengine.org/apireference.html#mongoengine.queryset.QuerySet.insert) method. This reduces load on memory and maintains optimal database performance.
     -   When retrieving lists of song records I have them queried with [batch_size](https://docs.mongoengine.org/apireference.html#mongoengine.queryset.QuerySet.batch_size) that optimizes bulk reads, reduces the load on the server and maintains good database performance.
 
 ### Available Endpoints
@@ -101,6 +100,11 @@ If you are running the project manually you will need to do the following:
     ```
     python manage.py runserver
     ```
+
+## What can be further improved on the project in the future
+- Improve on test coverage.
+- Indexing can be applied to the song collection that will promote more efficient execution of queries.
+- Better exception handling for MongoDB exceptions that may occur with db transactions.
 
 ## Built With
 
